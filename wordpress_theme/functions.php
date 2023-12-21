@@ -42,6 +42,8 @@ function stop_rich_editor($editor) {
 
 add_filter('user_can_richedit', 'stop_rich_editor');
 
+add_filter('show_admin_bar', '__return_false', 99); //remove the space by the admin bar
+
 // エディター独自スタイル追加
 //TinyMCE追加用のスタイルを初期化
 if(!function_exists('initialize_tinymce_styles')) {
