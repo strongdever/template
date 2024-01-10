@@ -22,6 +22,11 @@ define( 'S_DIRE', get_stylesheet_directory() );
 define( 'T_DIRE_URI', get_template_directory_uri() );
 define( 'S_DIRE_URI', get_stylesheet_directory_uri() );
 
+add_filter('query_vars', function($vars) {
+	$vars[] = 'plan';
+    return $vars;
+});
+
 define( 'THEME_NOTE', 'shinpohouse' );
 
 define( 'WPCF7_AUTOP', false );
@@ -92,13 +97,12 @@ function theme_add_files() {
     global $post;
 
     wp_enqueue_style('c-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', [], '1.0', 'all');
-	wp_enqueue_style('c-font-common', T_DIRE_URI.'/assets/font/fonts.css', [], '1.0', 'all');
+	wp_enqueue_style('c-fonts', T_DIRE_URI.'/assets/font/fonts.css', [], '1.0', 'all');
     wp_enqueue_style('c-reset', T_DIRE_URI.'/assets/css/reset.css', [], '1.0', 'all');
-    wp_enqueue_style('c-slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css', [], '1.0', 'all');
-    wp_enqueue_style('c-slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css', [], '1.0', 'all');
-    // wp_enqueue_style('c-lightbox', 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css', [], '1.0', 'all');
     wp_enqueue_style('c-common', T_DIRE_URI.'/assets/css/common.css', [], '1.0', 'all');
     wp_enqueue_style('c-style', T_DIRE_URI.'/assets/css/style.css', [], '1.0', 'all');
+    wp_enqueue_style('c-slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css', [], '1.0', 'all');
+    wp_enqueue_style('c-slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css', [], '1.0', 'all');
     wp_enqueue_style('c-theme', T_DIRE_URI.'/style.css', [], '1.0', 'all');
     // WordPress本体のjquery.jsを読み込まない
     if(!is_admin()) {
