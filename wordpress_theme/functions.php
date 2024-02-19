@@ -172,8 +172,6 @@ function disable_wpautop($init) {
     return $init;
 }
 
-define( 'WPCF7_AUTOP', false );
-
 function disable_wp_auto_p( $content ) {
     if ( is_singular( 'page' ) ) {
       remove_filter( 'the_content', 'wpautop' );
