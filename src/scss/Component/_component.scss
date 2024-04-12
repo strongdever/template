@@ -6,10 +6,12 @@
     justify-content: center;
     width: fit-content;
     max-width: 100%;
+    width: 24rem;
+    height: 5.5rem;
     padding: 0.8rem 1.2rem;
     background-color: #3B8E65;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    font-weight: 700;
+    font-family: "Noto Sans JP";
+    font-weight: 500;
     font-size: 1.6rem;
     line-height: 100%;
     letter-spacing: 0.2em;
@@ -18,9 +20,33 @@
     text-decoration: none;
     outline: none;
     transition: all 0.6s cubic-bezier(0.8, 0, 0.2, 1);
-    border-radius: 2.5rem;
+    border-radius: 0.8rem;
     cursor: pointer;
     z-index: 0;
+
+    &.btn-green {
+        background-color: $green_color;
+
+        &:hover {
+            color: $green_color;
+        }
+
+        &::after {
+            border: 2px solid $green_color;
+        }
+    }
+
+    &.btn-orange {
+        background-color: $orange_color;
+
+        &:hover {
+            color: $orange_color;
+        }
+
+        &::after {
+            border: 2px solid $orange_color;
+        }
+    }
 
     &::after {
         content: "";
